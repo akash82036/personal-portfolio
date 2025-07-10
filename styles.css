@@ -1,0 +1,204 @@
+:root {
+  --main-bg: #0d1117;
+  --welcome-bg: linear-gradient(to right, #363337, #2c2c43); /* Deep purple */
+  --projects-bg: #161b22; /* Dark blue-gray */
+  --primary: #1f1f1f;
+  --accent: #ff7f50;
+  --card-bg: #1e1e1e;
+  --main-gray: #ccc;
+  --text-color: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-list li {
+  margin: 0 20px;
+}
+
+.nav-list a {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--welcome-bg);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+#welcome-section p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+#projects {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--projects-bg);
+}
+
+.projects-header {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.project-tile {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-title {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.code {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+
+.project-tile:hover .code {
+  color: var(--accent);
+}
+
+.show-all {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: #000;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.show-all:hover {
+  background-color: #ff6333;
+}
+
+#contact {
+  background-color: var(--primary);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: #000;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-details:hover {
+  background-color: #ff6333;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #welcome-section h1 {
+    font-size: 2.2rem;
+  }
+
+  #welcome-section p {
+    font-size: 1.1rem;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+}
